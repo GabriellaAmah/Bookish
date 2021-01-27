@@ -1,0 +1,35 @@
+{
+    "env": {
+        "es6" : true,
+        "es2020": true,
+        "browser" : true,
+        "node" : true
+    },
+    "extends": [
+        "eslint:recommended"
+    ],
+    "parser" : "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "experimentalObjectRestSpread": true,
+        "allowImportExportEverywhere" : true,
+        "sourceType" : "module",
+        "ecmaVersion": 2020,
+        "es-syntax" : true
+        
+    },
+    "plugins": [
+    ],
+    "rules": {
+        "strict" : 0,
+        "no-console" : "off",
+        "no-restricted-syntax" : [
+            "error" , {
+                "selector" : "CallExpression[callee.object.name='console][callee.property.name!=/^(log|warn|error|info|trace)$/]",
+                "message" : "Unexpected property on console object was called"
+            }
+        ]
+    }
+}
