@@ -1,11 +1,10 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+import getIndex from '../client/controller/getIndex';
+import expressWrapper from '../express/expressWrapper';
+
 
 const clientRouter = express.Router()
 
-clientRouter.get('/', (_req : Request, res : Response) => {
-    return res.status(200).json({
-        message : 'hello welcome to Ebook ts'
-    })
-} )
+clientRouter.get('/', expressWrapper(getIndex))
 
 export default clientRouter;
