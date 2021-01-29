@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-import {  httpRequestParam, httpResponse, requestFunction } from "../utils/interface"
+import {  httpRequestParam, httpResponse,  requestFunction } from "../utils/interface"
 
-const expressWrapper = (controller : (requestParams? : httpRequestParam) => any ): requestFunction => {
+const expressWrapper = (controller : (requestParams? : httpRequestParam) => any  ): requestFunction => {
     return async (req, res) => {
         const httpRequest : httpRequestParam = {
             body: req.body,

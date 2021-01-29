@@ -11,7 +11,7 @@ class ServerHandler {
                 break;
 
             case 'EADDRINUSE':
-                console.log('port alrealdy in use.')
+                console.log('port already in use.')
                 process.exit(1)
                 break;
 
