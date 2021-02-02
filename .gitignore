@@ -16,6 +16,9 @@ test.html
 # Dependency directories
 node_modules/
 
+PDF
+coverImage
+
 # Optional npm cache directory
 .npm
 

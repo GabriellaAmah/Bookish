@@ -20,17 +20,13 @@ const httpErrorResponse = ({title, statusCode, stack, errorMessage} : httpError)
 }
 
 const apiResponse = ({successCode, data, message} : httpResponse) => {
-    let toReturn = {
-       data,
-       message
-    }
-
     return {
         headers : {
             'Content-Type' : 'application/json'
         },
         successCode,
-        data : toReturn
+        message,
+        data
     }
 
 }

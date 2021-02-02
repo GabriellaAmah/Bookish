@@ -18,7 +18,8 @@ interface httpResponse {
 interface httpRequestParam {
     body: BookModelInterface,
     params: object,
-    query: object
+    query: object,
+    file : object
 }
 
 type requestFunction = (req: Request, res: Response, next?: NextFunction) => void
@@ -26,12 +27,16 @@ type requestFunction = (req: Request, res: Response, next?: NextFunction) => voi
 interface BookModelInterface {
     title : string,
     author : string,
-    imagePath : string,
     genre : string,
-    filePath : string,
+    imagePath : string,
+    path : string,
     isCopyright : string,
     dor : string
 }
 
+interface httpParams {
+    id? : string
+}
 
-export { httpError, httpResponse, requestFunction, httpRequestParam, BookModelInterface }
+
+export { httpError, httpResponse, requestFunction, httpRequestParam, BookModelInterface, httpParams }
