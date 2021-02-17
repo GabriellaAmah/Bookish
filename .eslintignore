@@ -1,0 +1,7 @@
+src/@types/**/*.d.ts
+
+src/**/*.spec.ts
+
+src/database/dbManager.ts
+
+src/__test__/**.ts

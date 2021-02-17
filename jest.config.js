@@ -1,7 +1,10 @@
-
 module.exports =  {
+    preset : 'ts-jest',
     transform: {
-        "^.+\\.jsx?$": "babel-jest"
+        "node_modules/variables/^.+\\.jsx?$": "ts-jest"
     },
+    transformIgnorePatterns : [
+        "node_modules/(?!variables/.*)"
+    ],
     testEnvironment: 'node'
 }
