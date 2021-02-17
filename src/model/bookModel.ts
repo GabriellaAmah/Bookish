@@ -8,6 +8,7 @@ class BookConstructor {
     imagePath: string
     genre: string
     filePath: string
+    isCopyright : boolean
     dor: string
     constructor(bookInput: BookModelInterface) {
         this.title = bookInput.title
@@ -15,6 +16,7 @@ class BookConstructor {
         this.imagePath = bookInput.imagePath
         this.genre = bookInput.genre
         this.filePath = bookInput.path
+        this.isCopyright = bookInput.isCopyright
         this.dor = bookInput.dor
     }
 }
@@ -23,7 +25,8 @@ class BookModel extends BookConstructor {
 
     async saveBook() {
         try {
-            let getDb = await db()
+            let getDb  = await db() 
+            
             let savedItems = getDb?.collection('book').insertOne(this)
             return savedItems
         } catch (error) {

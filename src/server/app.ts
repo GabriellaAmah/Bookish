@@ -3,6 +3,9 @@ import * as bodyParser from 'body-parser'
 import cors from 'cors'
 import clientRouter from '../routers/client'
 import adminRouter from '../routers/admin'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const App  = express() 
 

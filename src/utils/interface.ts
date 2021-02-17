@@ -30,7 +30,7 @@ interface BookModelInterface {
     genre : string,
     imagePath : string,
     path : string,
-    isCopyright : string,
+    isCopyright : boolean,
     dor : string
 }
 

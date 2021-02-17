@@ -1,5 +1,6 @@
 import {MongoClient} from 'mongodb';
 import dotenv from 'dotenv'
+import dbManager from './dbManager';
 
 dotenv.config()
 
@@ -8,7 +9,14 @@ const client = new MongoClient(`${process.env.MONGODB_URL}`, {useNewUrlParser : 
 async function db(){
     try {
         let clientConnect = await client.connect();
-        let _db = clientConnect.db()
+        let dMan = new dbManager()
+        let _db ;
+
+        if(process.env.NODE_ENV == 'TEST'){
+           _db  = clientConnect.db()
+        }else {
+            _db =  dMan.start()
+        }
 
         console.log('client successfully connected to database')
 
